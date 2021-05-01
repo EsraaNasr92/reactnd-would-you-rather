@@ -16,19 +16,16 @@ class Dashboard extends Component {
 
   render() {
     //console.log(this.props)
-    const {questions, authedUser} = this.props
+    const {questions} = this.props
+    console.log(this.props)
     const {showQuestionAnswer} = this.state
-    const questionArray = Object.values(questions)
-    const filterQuestion = questionArray.filter(function(question){
-      const vote = (
-        question.optionOne.votes.indexOf(authedUser) > -1 || question.optionTwo.votes.indexOf(authedUser) > -1
-      )
-      return showQuestionAnswer ? vote :!vote
-    })
-
-
-
-
+  //  const questionArray = Object.values(questions)
+    //const filterQuestion = questionArray.filter(function(question){
+      //const vote = (
+        //question.optionOne.votes.indexOf(authedUser) > -1 || question.optionTwo.votes.indexOf(authedUser) > -1
+    //  )
+//return showQuestionAnswer ? vote :!vote
+  //  })
 
 
     return(
@@ -36,8 +33,8 @@ class Dashboard extends Component {
         <h3 className='center'>Your Questions</h3>
 
         <div className='btn-change'>
-          <button onClick={(e) => this.filterQuestion(false)}>Unanswered</button>
-          <button onClick={(e) => this.filterQuestion(true)}>Answered</button>
+          <button onClick={(e) => this.filterQuestion(false)} className={ !showQuestionAnswer ? 'selected-button' : 'default-button'}>Unanswered</button>
+          <button onClick={(e) => this.filterQuestion(true)} className={ showQuestionAnswer ? 'selected-button' : 'default-button'}>Answered</button>
         </div>
 
         <ul className='dashboard-list'>

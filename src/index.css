@@ -23,6 +23,15 @@ code {
     list-style: none;
 }
 
+.selected-button, .default-button {
+    background: #7490b6;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+}
+.default-button{
+    background: #8fb0dc;
+}
 /* Question Component */
 .question{
 

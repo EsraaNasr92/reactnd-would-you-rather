@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* Dashboard Component */
+.dashboard-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 0 !important;
+}
+.dashboard-list li {
+    list-style: none;
+}
+
+/* Question Component */
+.question{
+
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.avatar-pic {
+  height: 100px;
+  border-radius: 50%;
+  margin: 5px;
+}

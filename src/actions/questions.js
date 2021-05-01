@@ -1,6 +1,7 @@
-import { saveQuestion } from '../utils/api'
+import { saveQuestion, saveQuestionAnswer } from '../utils/api'
 export const RECIVE_QUESTIONS = 'RECIVE_QUESTIONS'
 export const ADD_QUESTION = 'ADD_QUESTION'
+export const ANSWER_QUESTION = 'ANSWER_QUESTION'
 
 export function reciveQuestions (questions){
   return{
@@ -41,4 +42,24 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
             alert('there\'s a problem creating new question. plesea try again ')
         })
     }
+}
+
+function addAnswer({ authedUser, questionId, answer }){
+    return{
+      type: ANSWER_QUESTION,
+      authedUser,
+      questionId,
+      answer
+    }
+}
+
+export function handleAddAnswer(info){
+  return (dispatch) => {
+    dispatch(addAnswer(info))
+    return saveQuestionAnswer(info)
+      .then(() => console.log('add answer'))
+      .catch((error) =>{
+        console.log('A problem when saving an answer')
+      })
+  }
 }

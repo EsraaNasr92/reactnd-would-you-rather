@@ -16,7 +16,7 @@ class Dashboard extends Component {
 
   render() {
     //console.log(this.props)
-    const {questions} = this.props
+    //const {questions} = this.props
     console.log(this.props)
     const {showQuestionAnswer} = this.state
   //  const questionArray = Object.values(questions)

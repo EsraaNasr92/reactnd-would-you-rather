@@ -34,18 +34,18 @@ chooseAnswer(answer){
     const { selectedAnswer } = this.state
 
     return(
-      <div className={answered ? question-details : question-item}>
+      <div className={answered ? 'question-item question-details' : 'question-item'}>
           {answered ? (
-            <p>Asked by: {name}</p>
+            <p>Asked by: {author.name}</p>
           ): (
-            <p>{name} asks</p>
+            <p>{author.name} asks</p>
           )
           }
           <div className="question-body">
             <div className="author-avatar">
                 <img
-                    src={avatar}
-                    alt={`avatar of ${name}`}
+                    src={author.avatarURL}
+                    alt={`avatar of ${author.name}`}
                     className='avatar-pic'
                   />
             </div>
@@ -80,8 +80,8 @@ chooseAnswer(answer){
                      <div className="option-one">{question.optionOne.text}</div>
 
                       <div className="poll-container">
-                          <div>{votesOptionOne} out of {totalVotes} votes</div>
-                          <div>Percentage votes: {percentageOptionOne}%</div>
+                          <div>{voteOptionOne} out of {totalVotes} votes</div>
+                          <div>Percentage votes: {perOptionOne}%</div>
                       </div>
                       <div className="your-vote">Your pick</div>
               </div>
@@ -90,7 +90,7 @@ chooseAnswer(answer){
                   <div className="option-two">{question.optionTwo.text}</div>
                   <div className="poll-container">
                         <div>{votesOptionTwo} out of {totalVotes} votes</div>
-                        <div>Percentage votes: {percentageOptionTwo}%</div>
+                        <div>Percentage votes: {perOptionTwo}%</div>
                     </div>
                     <div className="your-vote">Your pick</div>
                 </div>
@@ -106,9 +106,9 @@ chooseAnswer(answer){
 }
 
 
-function mapStateToProps({ author, users, questions}, { match }){
+function mapStateToProps({ authedUser, users, questions}, { match }){
   const { id } = match.params
-  const question = question[id]
+  const question = questions[id]
 
   const author = question ? users[question.author] : null
   const answered = question ? (question.optionOne.votes.indexOf(authedUser) > -1 ||
@@ -122,6 +122,8 @@ function mapStateToProps({ author, users, questions}, { match }){
   const perOptionOne = ((voteOptionOne / totalVotes) * 100).toFixed(1)
   const perOptionTwo = ((voteOptionOne / totalVotes) * 100).toFixed(1)
 
+
+  const answer = users[authedUser].answers[id]
 
   return{
     id,

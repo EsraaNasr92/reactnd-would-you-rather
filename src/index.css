@@ -16,7 +16,6 @@ code {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
     padding-left: 0 !important;
 }
 .dashboard-list li {
@@ -67,12 +66,18 @@ code {
 }
 
 /* Nav Component */
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+nav a{
+      text-decoration: none;
+}
 nav ul li {
     display: inline-block;
 }
 nav ul li a {
     padding-right: 20px;
-    text-decoration: none;
     color: #7490b6;
     font-weight: bold;
 }

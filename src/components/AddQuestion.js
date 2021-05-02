@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddQuestion } from '../actions/questions'
 import { Redirect } from 'react-router-dom'
+import Nav from './Nav'
 
 class AddQuestion extends Component {
 
@@ -49,7 +50,7 @@ class AddQuestion extends Component {
 
   		return (
   			<div className="new-question">
-
+          <Nav />
   				<div className="page-title">Create New Question</div>
 
   				<form onSubmit={this.handleSubmit}>

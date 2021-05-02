@@ -5,9 +5,10 @@ import Dashboard from './Dashboard'
 import AddQuestion from './AddQuestion'
 import LoadingBar from 'react-redux-loading'
 import Leaderboard from './Leaderboard'
-import Nav from './Nav'
+//import Nav from './Nav'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Answer from './Answer'
+import SignIn from './SignIn'
 
 class App extends Component {
 
@@ -21,16 +22,25 @@ class App extends Component {
           <Fragment>
             <LoadingBar />
             <div className='app-component'>
-                <Nav />
+
+              {/*   <Nav />
                 {this.props.loading === true
                     ? null
                     : <div>
-                        <Route path='/' exact component={Dashboard} />
+                        <Route path='/' exact component={SignIn} />
+                        <Route path='/Dashboard' exact component={Dashboard} />
                         <Route path='/Leaderboard' exact component={Leaderboard} />
                         <Route path='/AddQuestion' exact component={AddQuestion} />
                         <Route path='/question/:id' exact component={Answer} />
                       </div>
-                }
+                }*/}
+
+                <Route path='/' exact component={SignIn} />
+                <Route path='/Dashboard' exact component={Dashboard} />
+                <Route path='/Leaderboard' exact component={Leaderboard} />
+                <Route path='/AddQuestion' exact component={AddQuestion} />
+                <Route path='/question/:id' exact component={Answer} />
+
             </div>
           </Fragment>
         </Router>

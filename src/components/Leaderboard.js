@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Nav from './Nav'
 
 class Leaderboard extends Component{
   render() {
     const { userData } = this.props
     return (
-          <div>
+          <div className="leaderboard-component">
+            <Nav />
               <div className="page-title">
                 <h3>Leaderboard List</h3>
               </div>

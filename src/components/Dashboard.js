@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
 import { Link } from 'react-router-dom'
+import Nav from './Nav'
 
 class Dashboard extends Component {
 
@@ -32,6 +33,7 @@ class Dashboard extends Component {
 
     return(
       <div className='dashboard'>
+      <Nav />
         <h3 className='center'>Your Questions</h3>
 
         <div className='btn-change'>

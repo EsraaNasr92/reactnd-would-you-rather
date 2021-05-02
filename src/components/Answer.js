@@ -11,7 +11,7 @@ class Answer extends Component {
 handleSaveAnswer(e){
   e.preventDefault()
 
-  const { dispatch, authedUser, id } = this.mapStateToProps
+  const { dispatch, authedUser, id } = this.props
   const { selectedAnswer } = this.state
 
   dispatch(handleAddAnswer({

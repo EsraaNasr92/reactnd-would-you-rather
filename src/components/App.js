@@ -9,6 +9,7 @@ import Leaderboard from './Leaderboard'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Answer from './Answer'
 import SignIn from './SignIn'
+import PrivateUrl from './PrivateUrl'
 
 class App extends Component {
 
@@ -36,10 +37,10 @@ class App extends Component {
                 }*/}
 
                 <Route path='/' exact component={SignIn} />
-                <Route path='/Dashboard' exact component={Dashboard} />
-                <Route path='/Leaderboard' exact component={Leaderboard} />
-                <Route path='/AddQuestion' exact component={AddQuestion} />
-                <Route path='/question/:id' exact component={Answer} />
+                <PrivateUrl path='/Dashboard' exact component={Dashboard} />
+                <PrivateUrl path='/Leaderboard' exact component={Leaderboard} />
+                <PrivateUrl path='/AddQuestion' exact component={AddQuestion} />
+                <PrivateUrl path='/question/:id' exact component={Answer} />
 
             </div>
           </Fragment>

@@ -6,11 +6,9 @@ class Leaderboard extends Component{
   render() {
     const { userData } = this.props
     return (
-          <div className="leaderboard-component">
+          <div className="dashboard">
             <Nav />
-              <div className="page-title">
-                <h3>Leaderboard List</h3>
-              </div>
+              <h3  className='page-header'>Leaderboard List</h3>
               {userData.map((user, id) => (
                   <div className="container" key={id}>
                       <div className="author-section">
@@ -22,11 +20,11 @@ class Leaderboard extends Component{
                       </div>
                       <div className='point-section'>
 
-                          <div className="QuestPoints">
+                          <div className="scores">
                               <p>Answered Questions</p>
                               <p>{user.answerCount}</p>
                           </div>
-                          <div className="QuestPoints">
+                          <div className="scores">
                               <p>Created Questions</p>
                               <p>{user.questionCount}</p>
                           </div>

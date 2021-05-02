@@ -34,7 +34,7 @@ class Dashboard extends Component {
     return(
       <div className='dashboard'>
       <Nav />
-        <h3 className='center'>Your Questions</h3>
+        <h3 className='page-header'>Your Questions</h3>
 
         <div className='btn-change'>
           <button

@@ -53,25 +53,26 @@ class SignIn extends Component{
     }
 
     return(
-
-
-      <div className="signin-component">
+      <div className='header'>
 
         <div className="page-header">Please Login</div>
-        <div className="select-user">
-        <select className="select" value={selected} onChange={(event) => this.handleSelectionUser(event)}>
-        		<option value="-1" disabled>Select user...</option>
-        			{Object.keys(users).map(function(key) {
-        				return (
-        					<option value={users[key].id} key={key}>
-        						{users[key].name}
-        		</option>
-        				);
-        			})}
-        </select>
-          <button onClick={(event) => this.handleSignIn(event)} >sign in</button>
-        </div>
 
+        <div className="signin-component">
+
+              <div className="select-user">
+              <select className="select" value={selected} onChange={(event) => this.handleSelectionUser(event)}>
+              		<option value="-1" disabled>Select user...</option>
+              			{Object.keys(users).map(function(key) {
+              				return (
+              					<option value={users[key].id} key={key}>
+              						{users[key].name}
+              		</option>
+              				);
+              			})}
+              </select>
+                <button onClick={(event) => this.handleSignIn(event)} >sign in</button>
+              </div>
+      </div>
     </div>
     )
   }

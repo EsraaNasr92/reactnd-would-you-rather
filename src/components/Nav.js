@@ -22,24 +22,20 @@ class Nav extends Component {
                 <NavLink to="/AddQuestion" exact>New Question</NavLink>
               </li>
             </ul>
-
-
-            {authedUser && <div className="user-account">
-                <NavLink to="/" exact>
-                  <img
-                    src={avatar}
-                    alt={`avatar of ${name}`}
-                    className="avatar-pic"
-                    />
-                    <p>Welcome: {name}</p>
-                    <p>Logout</p>
-                </NavLink>
-              </div>
-            }
-
           </nav>
 
-
+          {authedUser && <div className="user-account">
+              <NavLink to="/" exact>
+                <img
+                  src={avatar}
+                  alt={`avatar of ${name}`}
+                  className="avatar-pic"
+                  />
+                  <p>Welcome: {name}</p>
+                  <p>Logout</p>
+              </NavLink>
+            </div>
+          }
         </div>
     )
   }

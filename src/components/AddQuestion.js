@@ -49,11 +49,11 @@ class AddQuestion extends Component {
       }
 
   		return (
-  			<div className="new-question">
+  			<div className="dashboard">
           <Nav />
-  				<div className="page-title">Create New Question</div>
+          <h3 className='page-header'>Create New Question</h3>
 
-  				<form onSubmit={this.handleSubmit}>
+  				<form onSubmit={this.handleSubmit} className="addQuestions">
   					<div className="would-you">Would you rather...</div>
 
   					<input
@@ -74,6 +74,7 @@ class AddQuestion extends Component {
   						onChange={(event) => this.handleInputChange(event, 'option_two')}
               />
 
+            <br />
   					<button type="submit">Submit</button>
 
   				</form>

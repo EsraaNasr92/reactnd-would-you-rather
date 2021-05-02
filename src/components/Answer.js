@@ -35,7 +35,7 @@ chooseAnswer(answer){
     const { selectedAnswer } = this.state
 
     return(
-      <div className={answered ? 'question-item question-details' : 'question-item'}>
+      <div className={answered ? 'dashboard question-details' : 'question-item'}>
       <Nav />
           {answered ? (
             <p>Asked by: {author.name}</p>

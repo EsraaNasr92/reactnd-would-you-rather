@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddQuestion } from '../actions/questions'
-
+import { Redirect } from 'react-router-dom'
 
 class AddQuestion extends Component {
 
@@ -9,6 +9,7 @@ class AddQuestion extends Component {
   state = {
     optionOneText:'',
 		optionTwoText:'',
+    toHome: false
 	};
 
 	handleInputChange = (event, type) => {
@@ -25,7 +26,7 @@ class AddQuestion extends Component {
     	const { optionOneText, optionTwoText} = this.state
       const { dispatch } = this.props
 
-      // to store data from input 
+      // to store data from input
     	dispatch(handleAddQuestion(
       		optionOneText,
       		optionTwoText
@@ -34,12 +35,17 @@ class AddQuestion extends Component {
     	this.setState({
         	optionOneText:'',
 			    optionTwoText:'',
-
+          //toHome: id ? false : true,
+          toHome: true
       	})
   	}
 
   	render() {
 
+      const { toHome } = this.state
+      if(toHome === true){
+        return <Redirect to='/' />
+      }
 
   		return (
   			<div className="new-question">

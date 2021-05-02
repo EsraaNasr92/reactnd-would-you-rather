@@ -16,9 +16,10 @@ class Leaderboard extends Component{
                               src={user.avatarURL}
                               alt={`avatar of ${user.name}`}
                               className="avatar-pic"/>
+                                <h3>{user.name}</h3>
                       </div>
                       <div className='point-section'>
-                          <h3>{user.name}</h3>
+
                           <div className="QuestPoints">
                               <p>Answered Questions</p>
                               <p>{user.answerCount}</p>
@@ -29,7 +30,7 @@ class Leaderboard extends Component{
                           </div>
                       </div>
                       <div className="score-section">
-                          <p>{user.total}</p>
+                        Score:  <p>   {user.total} </p>
                       </div>
                   </div>
               ))}

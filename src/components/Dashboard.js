@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
+import { Link } from 'react-router-dom'
 
 class Dashboard extends Component {
 
@@ -16,31 +17,42 @@ class Dashboard extends Component {
 
   render() {
     //console.log(this.props)
-    //const {questions} = this.props
+    const {questions, authedUser} = this.props
     console.log(this.props)
     const {showQuestionAnswer} = this.state
-  //  const questionArray = Object.values(questions)
-    //const filterQuestion = questionArray.filter(function(question){
-      //const vote = (
-        //question.optionOne.votes.indexOf(authedUser) > -1 || question.optionTwo.votes.indexOf(authedUser) > -1
-    //  )
-//return showQuestionAnswer ? vote :!vote
-  //  })
+    const questionArray = Object.values(questions)
+    const filterQuestion = questionArray.filter(function(question){
+      const vote = (
+        question.optionOne.votes.indexOf(authedUser) > -1 || question.optionTwo.votes.indexOf(authedUser) > -1
+      )
+        return showQuestionAnswer ? vote :!vote
+    })
 
+    const displayQuestion =  filterQuestion.sort((a,b) => b.timestamp - a.timestamp)
 
     return(
       <div className='dashboard'>
         <h3 className='center'>Your Questions</h3>
 
         <div className='btn-change'>
-          <button onClick={(e) => this.filterQuestion(false)} className={ !showQuestionAnswer ? 'selected-button' : 'default-button'}>Unanswered</button>
-          <button onClick={(e) => this.filterQuestion(true)} className={ showQuestionAnswer ? 'selected-button' : 'default-button'}>Answered</button>
+          <button
+                onClick={(e) => this.filterQuestion(false)}
+                className={ !showQuestionAnswer ? 'selected-button' : 'default-button'}>
+                  Unanswered
+          </button>
+          <button
+                onClick={(e) => this.filterQuestion(true)}
+                className={ showQuestionAnswer ? 'selected-button' : 'default-button'}>
+                  Answered
+          </button>
         </div>
 
         <ul className='dashboard-list'>
-          {this.props.questionIds.map((id) => (
-              <li key={id}>
-                <Question id={id} />
+          {displayQuestion.map((question) => (
+              <li key={question.id}>
+                <Link to={`question/${question['id']}`}>
+                  <Question id={question.id} />
+                </Link>
               </li>
           ))}
         </ul>

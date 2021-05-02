@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a {
+    text-decoration: none;
+}
 /* Dashboard Component */
 .dashboard-list {
     display: flex;
@@ -34,12 +37,11 @@ code {
 
 /* Question Component */
 .question{
-
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 .avatar-pic {
   height: 100px;
@@ -69,9 +71,6 @@ code {
 nav {
     display: flex;
     justify-content: space-between;
-}
-nav a{
-      text-decoration: none;
 }
 nav ul li {
     display: inline-block;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddAnswer } from '../actions/questions'
+import Nav from './Nav'
 
 class Answer extends Component {
 
@@ -35,6 +36,7 @@ chooseAnswer(answer){
 
     return(
       <div className={answered ? 'question-item question-details' : 'question-item'}>
+      <Nav />
           {answered ? (
             <p>Asked by: {author.name}</p>
           ): (

@@ -26,6 +26,7 @@ class Question extends Component{
           <p>{optionOne}</p>
           <p>Or</p>
           <p>...</p>
+          <button>View poll</button>
         </div>
       </div>
     )

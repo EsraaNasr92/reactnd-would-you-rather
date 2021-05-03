@@ -40,8 +40,9 @@ chooseAnswer(answer){
     }
 
     return(
-      <div className={answered ? 'dashboard question-details' : 'question-item'}>
+      <div className={answered ? 'dashboard question-details' : 'dashboard question-item'}>
       <Nav />
+      <h3 className='page-header'>would you rather?</h3>
           {answered ? (
             <p>Asked by: {author.name}</p>
           ): (

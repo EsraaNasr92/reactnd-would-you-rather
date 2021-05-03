@@ -3,7 +3,7 @@
 It's a game. you can login and choose question and answer it and view leaderboard.
 
 # Installation
-npm-install ---> install dependencies
+npm install ---> install dependencies
 npm start ---> start project
 
 ## Data

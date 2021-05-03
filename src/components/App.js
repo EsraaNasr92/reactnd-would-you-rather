@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Answer from './Answer'
 import SignIn from './SignIn'
 import PrivateUrl from './PrivateUrl'
+import Notfound from './Notfound'
 
 class App extends Component {
 
@@ -37,10 +38,11 @@ class App extends Component {
                 }*/}
 
                 <Route path='/' exact component={SignIn} />
-                <PrivateUrl path='/Dashboard' exact component={Dashboard} />
-                <PrivateUrl path='/Leaderboard' exact component={Leaderboard} />
-                <PrivateUrl path='/AddQuestion' exact component={AddQuestion} />
+                <PrivateUrl path='/dashboard' exact component={Dashboard} />
+                <PrivateUrl path='/leaderboard' exact component={Leaderboard} />
+                <PrivateUrl path='/add' exact component={AddQuestion} />
                 <PrivateUrl path='/question/:id' exact component={Answer} />
+                <Router path='/notfound' exact component={Notfound} />
 
             </div>
           </Fragment>

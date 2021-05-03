@@ -45,7 +45,7 @@ class AddQuestion extends Component {
 
       const { toHome } = this.state
       if(toHome === true){
-        return <Redirect to='/' />
+        return <Redirect to='/dashboard' />
       }
 
   		return (

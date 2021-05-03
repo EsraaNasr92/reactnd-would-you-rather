@@ -13,13 +13,13 @@ class Nav extends Component {
           <nav>
             <ul>
               <li>
-                <NavLink to="/Dashboard" exact>Home</NavLink>
+                <NavLink to="/dashboard" exact>Home</NavLink>
               </li>
               <li>
-                <NavLink to="/Leaderboard" exact>Leaderboard</NavLink>
+                <NavLink to="/leaderboard" exact>Leaderboard</NavLink>
               </li>
               <li>
-                <NavLink to="/AddQuestion" exact>New Question</NavLink>
+                <NavLink to="/add" exact>New Question</NavLink>
               </li>
             </ul>
           </nav>

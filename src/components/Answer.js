@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddAnswer } from '../actions/questions'
 import Nav from './Nav'
+import { Redirect } from 'react-router-dom'
 
 class Answer extends Component {
 
@@ -33,6 +34,10 @@ chooseAnswer(answer){
     const { question, author, answer, answered, voteOptionOne, votesOptionTwo,
     totalVotes, perOptionOne, perOptionTwo } = this.props
     const { selectedAnswer } = this.state
+
+    if(!question){
+      return <Redirect to="/notfound" />
+    }
 
     return(
       <div className={answered ? 'dashboard question-details' : 'question-item'}>

@@ -6,7 +6,7 @@ import AddQuestion from './AddQuestion'
 import LoadingBar from 'react-redux-loading'
 import Leaderboard from './Leaderboard'
 //import Nav from './Nav'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Answer from './Answer'
 import SignIn from './SignIn'
 import PrivateUrl from './PrivateUrl'
@@ -36,14 +36,14 @@ class App extends Component {
                         <Route path='/question/:id' exact component={Answer} />
                       </div>
                 }*/}
-
-                <Route path='/' exact component={SignIn} />
-                <PrivateUrl path='/dashboard' exact component={Dashboard} />
-                <PrivateUrl path='/leaderboard' exact component={Leaderboard} />
-                <PrivateUrl path='/add' exact component={AddQuestion} />
-                <PrivateUrl path='/question/:id' exact component={Answer} />
-                <Router path='/notfound' exact component={Notfound} />
-
+                <Switch>
+                    <Route path='/' exact component={SignIn} />
+                    <PrivateUrl path='/dashboard' exact component={Dashboard} />
+                    <PrivateUrl path='/leaderboard' exact component={Leaderboard} />
+                    <PrivateUrl path='/add' exact component={AddQuestion} />
+                    <PrivateUrl path='/question/:id' exact component={Answer} />
+                    <Route path='/notfound' exact component={Notfound} />
+                </Switch>
             </div>
           </Fragment>
         </Router>
